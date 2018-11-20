@@ -1,0 +1,38 @@
+Wprowadzenie do kursu React.js od podstaw
+ by  Michał Miszczyszyn 28 listopada 2017 Front-end / JavaScript
+https://typeofweb.com/kurs/react-js/
+
+    Wprowadzenie do kursu React.js od podstaw
+    Poznaj React.js
+    Pierwszy komponent w React.js
+    Props czyli atrybuty w React.js
+    Podział na komponenty w React.js
+    Klasy jako komponenty React.js
+    Interakcja z komponentami React.js
+    Stan komponentów React.js
+    State w React.js 2
+    Metody cyklu życia komponentu w React.js
+    React.js w przykładach: filtrowanie statycznej listy
+    Tworzenie aplikacji React.js dzięki create-react-app
+    React.js na GitHub Pages dzięki create-react-app
+    Testowanie aplikacji React.js — podstawy Enzyme
+    Testowanie React.js w Enzyme — props, state i interakcje
+    Poprawne bindowanie funkcji w React.js
+    Odpowiadam na pytania: Babel, ECMAScript, destrukturyzacja, onClick, className
+    Komunikacja pomiędzy komponentami w React.js
+    Komunikacja z API w React.js
+    Formularze w React.js — kontrolowane komponenty
+    Formularze w React.js — niekontrolowane komponenty
+    Odpowiadam na pytania: props, nawiasy klamrowe, funkcje vs klasy, import react
+    TDD w React.js z pomocą react-testing-library
+    Flux i Redux
+    React + Redux — kurs: wprowadzenie i podstawy
+    React + Redux — filtrowanie listy, proste selektory
+    Projektowanie komponentów: Presentational & Container Components
+    Asynchroniczność w Redux: redux-thunk
+    Kiedy używać state, a kiedy Redux?
+    Nowe metody cyklu życia: getDerivedStateFromProps i getSnapshotBeforeUpdate
+    Leniwe ładowanie komponentów w React dzięki import
+    Higher Order Reducers — Redux i powtarzanie kodu
+
+Kurs umieszczam naGitHubie.
