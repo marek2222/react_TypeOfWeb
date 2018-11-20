@@ -5,11 +5,11 @@ import React, { Component } from 'react';
 function MojKomponent(){
     return (
         <div>
-            <h1>Witaj Świecie!</h1>
-            <h2>Przerabiam kurs react.js</h2>
-            <br></br>
-            <h4>Zewnętrzny komponent</h4>
-        </div>
+            <dialog open>
+                <h1>Tytuł</h1>
+                <p>Treść</p>
+            </dialog>
+      </div>
     );
 }
 

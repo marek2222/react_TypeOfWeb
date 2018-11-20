@@ -5,16 +5,8 @@ import './index.css';
 import MojKomponent from './komponenty/MojKomponent';
 import * as serviceWorker from './serviceWorker';
 
-
-const HelloKomponent = ()=> (
-    <p>Hellooooooo</p>
-);
-
 const render = () => (
     <React.Fragment>
-        <HelloKomponent />
-        <HelloKomponent />
-        <HelloKomponent />
         <MojKomponent />
     </React.Fragment>
 );
