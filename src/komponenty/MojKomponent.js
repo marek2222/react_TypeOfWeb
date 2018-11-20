@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 // import logo from '../logo.svg';
 // import '../App.css';
 
-function MojKomponent(){
+function MojKomponent({ tytul, zawartosc }) {
     return (
-        <div>
-            <dialog open>
-                <h1>Tytuł</h1>
-                <p>Treść</p>
-            </dialog>
+      <div>
+        <dialog open>
+          <h1>{tytul}</h1>
+          <p>{zawartosc}</p>
+        </dialog>
       </div>
     );
-}
+  }
 
 export default MojKomponent;

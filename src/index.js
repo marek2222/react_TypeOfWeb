@@ -5,16 +5,14 @@ import './index.css';
 import MojKomponent from './komponenty/MojKomponent';
 import * as serviceWorker from './serviceWorker';
 
-const render = () => (
-    <React.Fragment>
-        <MojKomponent />
-    </React.Fragment>
-);
 
 //ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(
-    render(), 
-    document.getElementById('root'));
+    <MojKomponent 
+        tytul='Jesteś zadowolony?' 
+        zawartosc='To było prostsze niż mogło się wydawać, prawda?'></MojKomponent>, 
+    document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
