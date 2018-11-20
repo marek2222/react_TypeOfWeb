@@ -1,17 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
+import MojKomponent from './MojKomponent';
 import * as serviceWorker from './serviceWorker';
 
-function MojKomponent(){
-    return (
-        <div>
-            <h1>Witaj Świecie!</h1>
-            <h2>Przerabiam kurs react.js</h2>
-        </div>
-    );
-}
+
 
 //ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(<MojKomponent />, document.getElementById('root'));
