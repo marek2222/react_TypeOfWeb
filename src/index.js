@@ -8,9 +8,11 @@ import * as serviceWorker from './serviceWorker';
 
 //ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(
-    <MojKomponent 
-        tytul='Jesteś zadowolony?' 
-        zawartosc='To było prostsze niż mogło się wydawać, prawda?'></MojKomponent>, 
+    <div>
+        <MojKomponent  zawartosc='To jest <b>HTML</b>' />
+        {/* <MojKomponent  zawartosc={To jest <b>HTML</b>} /> */}
+        <MojKomponent  zawartosc={<span>To jest <b>HTML</b></span>} />
+    </div>,     
     document.getElementById('root')
 );
 
