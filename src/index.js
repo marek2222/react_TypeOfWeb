@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
-import MojKomponent from './MojKomponent';
+import KomponentPierwszy from './komponenty/KomponentPierwszy';
 import * as serviceWorker from './serviceWorker';
 
 
@@ -15,7 +15,7 @@ const render = () => (
         <HelloKomponent />
         <HelloKomponent />
         <HelloKomponent />
-        <MojKomponent />
+        <KomponentPierwszy />
     </React.Fragment>
 );
 
