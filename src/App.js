@@ -23,28 +23,16 @@ function AppHeader() {
   
   function ContactsList() {
     return (
-      <ul className="ui relaxed divided list selection">
-        <ContactItem
-          login="typeofweb1"
-          name="Lena"
-          department="JavaScript Developer"
-        />
-        <ContactItem
-          login="typeofweb2"
-          name="Brian"
-          department="Human Resources"
-        />
-        <ContactItem
-          login="typeofweb3"
-          name="Rick"
-          department="QA"
-        />
-      </ul>
+        <ul className="ui relaxed divided list selection">
+            <ContactItem          login="typeofweb1"          name="Lena"          department="JavaScript Developer"        />
+            <ContactItem          login="typeofweb2"          name="Brian"          department="Human Resources"        />
+            <ContactItem          login="typeofweb3"          name="Rick"          department="QA"        />
+        </ul>
     );
   }
   
   function ContactItem({ login, name, department }) {
-    const imgUrl = `../img/${login}.png`;
+    // const imgUrl = `../img/${login}.png`;
     return (
       <li className="item">
         <Avatar login={login} />
@@ -58,13 +46,13 @@ function AppHeader() {
   
   function Avatar({ login }) {
     // const imgUrl = `../img/${login}.png`;
-    const imgUrl = ''; 
-    if (login.includes('@') ) {
-        imgUrl = imgUrl = `https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50`;
+    let imgUrl = ''; 
+    if (login.includes("@")) {
+        imgUrl = `https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50`;
     } else {
         imgUrl = `../img/${login}.png`;
     }
-    return ( <img src={imgUrl} className="ui mini rounded image" alt="" /> );
+    return ( <img src={imgUrl} className="ui mini rounded image" /> );
   }
   
   function App() {
