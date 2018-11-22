@@ -11,11 +11,14 @@ class AppHeader extends React.Component {
                         Lista kontaktów
                     </a>
                     <div className="header item">
-                        <button className="ui button">Dodaj</button>
+                        <button className="ui button" onClick={this.onClickHandler}>Dodaj</button>
                     </div>
                 </nav>
             </header>
         );
+    }
+    onClickHandler() {
+        console.log('Kliknięto element li');
     }
 }
 

@@ -6,7 +6,8 @@ class ContactItem extends React.Component {
         const { login, name, department } = this.props
         const imgUrl = `../img/${login}.png`;
         return (
-            <li className="item">
+            <li className="item" onClick={this.onClickHandler} 
+                    onMouseOver={this.onMouseOverHandler}>
                 <img src={imgUrl} className="ui mini rounded image" />
                 <div className="content">
                     <h4 className="header">{name}</h4>
@@ -14,6 +15,12 @@ class ContactItem extends React.Component {
                 </div>
             </li>
         );
+    }
+    onClickHandler() {
+        console.log('Kliknięto element li');
+    }
+    onMouseOverHandler(){
+        console.log('Najechano na element li');
     }
 }
 
