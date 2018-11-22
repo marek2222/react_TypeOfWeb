@@ -9,46 +9,27 @@ import ContactsList from './ContactsList';
 class App extends React.Component {
     constructor(){
         super();
-        this.state = {clicks: 0, suum:0, counterDouble: 0};
-        
+        this.state = {imie: '', nazwisko: ''};
     }
     render() {
         return (
             <div>
-                {/* <AppHeader />
+                <AppHeader />
                 <ContactsList />
-                <hr/> */}
-                <button onClick={this.increment.bind(this)}>+</button>
-                <output>{this.state.clicks}</output>
-                <button onClick={this.decrement.bind(this)}>-</button>
+                <hr/>
+                Imię:       <input type='text' value={this.state.imie} onInput={this.onInputImieHandler.bind(this)}></input>
+                <br/>
+                Nazwisko: <input type='text' value={this.state.nazwisko} onInput={this.onInputNazwiskoHandler.bind(this)}></input>
+                <br/>
+                <label>Wpisałeś: {this.state.imie} {this.state.nazwisko}</label>
             </div>
         );
     }
-    increment(){
-        console.log('clicks: było: ', this.state.clicks);
-        console.log('suum: było: ', this.state.suum)
-        this.setState({
-                clicks: this.state.clicks + 1,
-                suum: this.state.suum + 1
-            }, () => {
-                console.log('clicks: jest: ', this.state.clicks);
-                console.log('suum: jest: ', this.state.suum)
-                console.log('')
-            }
-        )
+    onInputImieHandler(event){
+        this.setState({ imie: event.target.value })
     }
-    decrement(){
-        console.log('clicks: było: ', this.state.clicks);
-        console.log('suum: było: ', this.state.suum)
-        this.setState({
-                clicks: this.state.clicks - 1,
-                suum: this.state.suum + 1
-            }, () => {
-                console.log('clicks: jest: ', this.state.clicks);
-                console.log('suum: jest: ', this.state.suum)
-                console.log('')
-            }
-        )
+    onInputNazwiskoHandler(event){
+        this.setState({  nazwisko: event.target.value })
     }
 }
 
