@@ -29,7 +29,7 @@ class App extends React.Component {
         this.setState({ imie: event.target.value })
     }
     onInputNazwiskoHandler(event){
-
+        this.setState({  nazwisko: event.target.value })
     }
 }
 
