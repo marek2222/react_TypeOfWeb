@@ -7,9 +7,9 @@ import ContactsList from './ContactsList';
 
 
 class App extends React.Component {
-    constructor(){
-        super();
-        this.state = {imie: '', nazwisko: ''};
+    constructor(props){
+        super(props);
+        this.state = { dateVisble: true };
     }
     render() {
         return (
@@ -17,20 +17,41 @@ class App extends React.Component {
                 <AppHeader />
                 <ContactsList />
                 <hr/>
-                Imię:       <input type='text' value={this.state.imie} onInput={this.onInputImieHandler.bind(this)}></input>
-                <br/>
-                Nazwisko: <input type='text' value={this.state.nazwisko} onInput={this.onInputNazwiskoHandler.bind(this)}></input>
-                <br/>
-                <label>Wpisałeś: {this.state.imie} {this.state.nazwisko}</label>
+                <button onClick={this.onClickButton.bind(this)} >Kliknij</button>
+                {this.state.dateVisble && <DateComponent />}
             </div>
         );
     }
-    onInputImieHandler(event){
-        this.setState({ imie: event.target.value })
-    }
-    onInputNazwiskoHandler(event){
-        this.setState({  nazwisko: event.target.value })
+    onClickButton(){
+        this.setState(state => ({ dateVisble: !this.state.dateVisble }))
     }
 }
+
+class DateComponent extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            date: new Date()
+        };
+    }
+    
+    componentDidMount(){
+        this.timerId = window.setInterval(this.updateDate.bind(this), 1000);
+    }
+    componentWillUnmount(){
+        window.clearInterval(this.timerId);
+    }
+    updateDate(){
+        this.setState({
+            date: new Date()
+        });
+    }
+
+    render() {
+        const dateStr = this.state.date.toString();
+        return <time>{dateStr}</time>;
+    }
+}
+
 
 export default App;
