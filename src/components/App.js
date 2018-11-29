@@ -11,19 +11,17 @@ class App extends React.Component {
             filteredUsers: allUsers
         };
     }
-  
     filterUsers(e) {
         const text = e.currentTarget.value;
-        const filteredUsers = this.getFilteredUsersForText(text)
+        const filteredUsers = this.getFilteredUsersForText(text);
         this.setState({
             filteredUsers
-        })
+        });
     }
-    
-    getFilteredUsersForText(text) {
-        return allUsers.filter(user => user.toLowerCase().includes(text.toLowerCase()))
+    getFilteredUsersForText(text){
+        return allUsers.filter(user => user.toLocaleLowerCase().includes(text.toLocaleLowerCase()));
     }
-    
+  
     render () {
         return (
             <div>
@@ -34,21 +32,19 @@ class App extends React.Component {
     }
 };
 
-
 const UsersList = ({ users }) => {
     if (users.length > 0) {
       return (
         <ul>
-            {users.map(user => <li key={user}>{user}</li>)}
+            {users.map(user => <li key={user}>{user}</li> )}  
         </ul>
       );
     }
-  
+
     return (
         <p>No results!</p>
     );
 };
 
-
-  
+ 
 export default App;
