@@ -1,36 +1,54 @@
 import './App.css';
+import React from 'react';
+// import React, { Component } from 'react';
 
-import React, { Component } from 'react';
-
-import AppHeader from './AppHeader';
-import ContactsList from './ContactsList';
-
+const allUsers = ['Michal', 'Kasia', 'Jacek', 'Marta', 'Tomek', 'Ania'];
 
 class App extends React.Component {
-    constructor(){
-        super();
-        this.state = {imie: '', nazwisko: ''};
+    constructor() {
+        super();    
+        this.state = {
+            filteredUsers: allUsers
+        };
     }
-    render() {
+  
+    filterUsers(e) {
+        const text = e.currentTarget.value;
+        const filteredUsers = this.getFilteredUsersForText(text)
+        this.setState({
+            filteredUsers
+        })
+    }
+    
+    getFilteredUsersForText(text) {
+        return allUsers.filter(user => user.toLowerCase().includes(text.toLowerCase()))
+    }
+    
+    render () {
         return (
             <div>
-                <AppHeader />
-                <ContactsList />
-                <hr/>
-                Imię:       <input type='text' value={this.state.imie} onInput={this.onInputImieHandler.bind(this)}></input>
-                <br/>
-                Nazwisko: <input type='text' value={this.state.nazwisko} onInput={this.onInputNazwiskoHandler.bind(this)}></input>
-                <br/>
-                <label>Wpisałeś: {this.state.imie} {this.state.nazwisko}</label>
+                <input onInput={this.filterUsers.bind(this)} />
+                <UsersList users={this.state.filteredUsers} />
             </div>
         );
     }
-    onInputImieHandler(event){
-        this.setState({ imie: event.target.value })
-    }
-    onInputNazwiskoHandler(event){
-        this.setState({  nazwisko: event.target.value })
-    }
-}
+};
 
+
+const UsersList = ({ users }) => {
+    if (users.length > 0) {
+      return (
+        <ul>
+            {users.map(user => <li key={user}>{user}</li>)}
+        </ul>
+      );
+    }
+  
+    return (
+        <p>No results!</p>
+    );
+};
+
+
+  
 export default App;

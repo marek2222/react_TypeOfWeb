@@ -11,3 +11,8 @@
     content: '';
   }
   
+  input {
+    font-size: 25px;
+    border: 1px solid black;
+    margin: 5px 0 0 5px;
+  }
