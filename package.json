@@ -16,6 +16,7 @@
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build"
     },
+    "homepage": "https://marek2222.github.io/react_typeofweb/",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/marek2222/react_typeofweb.git"
@@ -23,7 +24,6 @@
     "bugs": {
         "url": "https://github.com/marek2222/react_typeofweb/issues"
     },
-    "homepage": "https://github.com/marek2222/react_typeofweb#readme",
     "eslintConfig": {
         "extends": "react-app"
     },
