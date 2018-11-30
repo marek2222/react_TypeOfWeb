@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/marek2222/react_typeofweb/precache-manifest.9d3b0a5b0d77f77df30d7f400e4b6f16.js"
+  "/react_typeofweb/precache-manifest.c536206ecd750170f1952d040030fd03.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/marek2222/react_typeofweb/index.html", {
+workbox.routing.registerNavigationRoute("/react_typeofweb/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
