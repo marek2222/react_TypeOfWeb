@@ -36,3 +36,34 @@ https://typeofweb.com/kurs/react-js/
     Higher Order Reducers — Redux i powtarzanie kodu
 
 Kurs umieszczam naGitHubie.
+
+Narzędzia
+
+Po zakończeniu instalacji, Twoim oczom ukazuje się instrukcja z komendami, z których możesz korzystać. 
+Wejdź do folderu react-test-create-react-app i wtedy możesz korzystać z takich poleceń:
+
+    npm start — uruchamia serwer deweloperski — będziemy z tego polecenia korzystać najczęściej
+    npm run build — buduje wersję produkcyjną gotowej aplikacji — ten kod wrzucasz na serwer
+    npm test — odpala testy
+    npm run eject — usuwa create-react-app i kopiuje wszystkie pliki konfiguracyjne do projektu. 
+        Dzięki temu możesz je dowolnie zmodyfikować, ale nie będziesz już mógł korzystać 
+        z aktualizacji do create-react-app. Na razie tego nie używaj 🙂
+
+12 
+- Dodaj homepage do package.json
+        "homepage": "https://imię.github.io/nazwa",
+- Zainstaluj paczkę i dodaj skrypty
+    Zainstaluj pomocniczą paczkę gh-pages. Jest to proste narzędzie do publikowania rzeczy na GitHubie. 
+    Jedno polecenie: npm install --save gh-pages
+    Następnie dodaj dwa nowe skrypty do swojego package.json:
+        {
+            "scripts": {
+                "predeploy": "npm run build",
+                "deploy": "gh-pages -d build",
+                …
+            }
+        }
+- Zrób deploy
+    Tak, to naprawdę już 😉 Prawie gotowe. Wywołaj tylko npm run deploy.
+- Skonfiguruj GitHub Pages
+    Ustaw, aby GitHub Pages korzystało ze stworzonego właśnie brancha gh-pages. U
