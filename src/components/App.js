@@ -2,49 +2,64 @@ import './App.css';
 import React from 'react';
 // import React, { Component } from 'react';
 
-const allUsers = ['Michal', 'Kasia', 'Jacek', 'Marta', 'Tomek', 'Ania'];
+const users = ['Adam', 'Marcin', 'Dorota', 'Zenek', 'Jakub', 'Roksana', 'Lena'];
 
 class App extends React.Component {
-    constructor() {
-        super();    
-        this.state = {
-            filteredUsers: allUsers
-        };
-    }
-    filterUsers(e) {
-        const text = e.currentTarget.value;
-        const filteredUsers = this.getFilteredUsersForText(text);
-        this.setState({
-            filteredUsers
-        });
-    }
-    getFilteredUsersForText(text){
-        return allUsers.filter(user => user.toLocaleLowerCase().includes(text.toLocaleLowerCase()));
-    }
+  constructor() {
+    super();
+    this.state = {
+      inputText: '',
+      filteredUsers: users
+    };
+  }
   
-    render () {
-        return (
-            <div>
-                <input onInput={this.filterUsers.bind(this)} />
-                <UsersList users={this.state.filteredUsers} />
-            </div>
-        );
-    }
-};
+  handleOnInput = e => {
+    const text = e.currentTarget.value;
+    this.getFilteredUsers(text)
+      .then(filteredUsers => {
+        // verify that app is still in the same state
+        if(text !== this.state.inputText) return;
+
+        this.setState({ filteredUsers });
+      });
+  }
+  
+  getFilteredUsers(text) {
+    // record relevant app state
+    this.setState({ inputText: text });
+      
+    return new Promise(resolve => {
+      const time = (Math.random() + 1) * 250;
+      setTimeout(() => {
+        const filteredUsers = users.filter(user => user.toLowerCase().includes(text.toLowerCase()));
+        resolve(filteredUsers);
+      }, time);
+    });
+  }
+  
+  render() {
+    return (
+      <div>
+        <input value={this.state.input} onInput={this.handleOnInput} placeholder="Find user"/>
+        <UsersList users={this.state.filteredUsers} />
+      </div>
+    );
+  }
+}
 
 const UsersList = ({ users }) => {
-    if (users.length > 0) {
+  if(users.length) {
       return (
         <ul>
-            {users.map(user => <li key={user}>{user}</li> )}  
-        </ul>
+          {users.map(user => <li key={user}>{user}</li>)}  
+        </ul> 
       );
     }
 
-    return (
-        <p>No results!</p>
-    );
-};
+  return ( 
+    <p>No Results</p> 
+  );
+}
 
  
 export default App;
