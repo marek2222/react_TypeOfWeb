@@ -66,4 +66,32 @@ Wejdź do folderu react-test-create-react-app i wtedy możesz korzystać z takic
 - Zrób deploy
     Tak, to naprawdę już 😉 Prawie gotowe. Wywołaj tylko npm run deploy.
 - Skonfiguruj GitHub Pages
-    Ustaw, aby GitHub Pages korzystało ze stworzonego właśnie brancha gh-pages. U
+    Ustaw, aby GitHub Pages korzystało ze stworzonego właśnie brancha gh-pages. 
+
+14
+    Enzyme
+Enzyme to biblioteka do testowania komponentów React.js. Ułatwia tworzenie 
+komponentów na potrzeby testów, odczytywanie oraz zmianę 
+propsów i state, a także pozwala na asercje. Zgodnie z dokumentacją 
+create-react-app aby zacząć używać cra razem z enzyme trzeba zainstalować:
+    npm install --save-dev enzyme enzyme-adapter-react-16 react-test-renderer
+
+Co robią poszczególne paczki?
+    enzyme — wspomniana biblioteka
+    enzyme-adapter-react-16 — enzyme wymaga zainstalowania odpowiedniego adaptera do konkretnej wersji React.js
+    react-test-renderer — renderowanie bez konieczności istnienia DOM
+Następnie stwórz jeszcze jeden plik src/setupTests.js. 
+Tam zawrzyj konfigurację wszystkich testów. 
+W najprostszej wersji wygląda ona tak:
+    import { configure } from 'enzyme';
+    import Adapter from 'enzyme-adapter-react-16';
+
+    configure({ adapter: new Adapter() });
+W tym samym pliku możesz też dodać np. globalne mocki — jeśli 
+Ci będą potrzebne. Albo biblioteki, z których chcesz korzystać w testach.
+
+
+
+
+
+
