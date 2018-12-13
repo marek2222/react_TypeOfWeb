@@ -10,7 +10,8 @@ class App extends React.Component {
     super();
 
     this.state = {
-      filteredUsers: allUsers
+      filteredUsers: allUsers,
+      selectedUser: null
     };
   }
 
@@ -26,11 +27,21 @@ class App extends React.Component {
     return allUsers.filter(user => user.toLowerCase().includes(text.toLowerCase()))
   }
 
+  // Coś się wydarzyło w komponencie-dziecku i musisz poinformować o tym rodzica. 
+  // Przykładowo: Na naszej liście kontaktów, użytkownik zaznaczył kontakt, a rodzic musi wiedzieć, 
+  // który kontakt został zaznaczony. Jak to zrobić?
+  onUserSelected = (selectedUser) => {
+    this.setState({
+      selectedUser
+    })
+  }
+
   render() {
     return (
       <div>
+        {this.state.selectedUser}
         <input onInput={this.filterUsers} />
-        <UsersList users={this.state.filteredUsers} />
+        <UsersList userSelected={this.onUserSelected} users={this.state.filteredUsers} />
       </div>
     );
   }
