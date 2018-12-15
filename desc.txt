@@ -90,7 +90,8 @@ W najprostszej wersji wygląda ona tak:
 W tym samym pliku możesz też dodać np. globalne mocki — jeśli 
 Ci będą potrzebne. Albo biblioteki, z których chcesz korzystać w testach.
 
-
+19
+    Komunikacja z API w React.js
 
 
 
