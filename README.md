@@ -1,3 +1,7 @@
+This project was created on the base [Kurs React.js](https://typeofweb.com/kurs/react-js/) by Michał Miszczyszyn. 
+Thank you.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
