@@ -14,7 +14,6 @@ export  class ContactsList  extends React.Component {
     render(){
         return (
             <ul className="ui relaxed divided list selection">
-                <ContactItem login="typeofweb1" name="Lena"  department="JavaScript Developer" />
                 { this.props.contacts.map(this.contactToContactItem) }
             </ul>
         );

@@ -93,6 +93,8 @@ Ci będą potrzebne. Albo biblioteki, z których chcesz korzystać w testach.
 19
     Komunikacja z API w React.js
 
-
+20 
+    Formularze w React.js — kontrolowane komponenty
+    
 
 
