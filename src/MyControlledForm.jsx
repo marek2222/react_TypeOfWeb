@@ -1,40 +1,30 @@
 import React from 'react';
 
 export class MyControlledForm extends React.Component {
-    state = {
-        name: '',
-        color: 'blue',
-        message: '',
-        isChecked: true,
-    };
     
-    changeProps = (e) => {
-        const name = e.target.name;
-        if(e.target.type != 'checkbox') {
-            this.setState({
-            [name]: e.target.value
-            });
-        }
-        else {
-            this.setState({
-            [name]: e.target.checked
-            });
-        }
+    submitForm = () => {
+        console.log('Wartości pól: ');
+        console.log('- pole input: '+ this.myInput.value);
+        console.log('- pole select: '+ this.mySelect.value);
+        console.log('- pole textarea: '+ this.myTextarea.value);
+        console.log('- pole checkbox: '+ this.myCheckbox.value);
+        console.log();
     }
-  
+    
     render() {
         return (
             <div>
-            <input value={this.state.name} name="name" onChange={this.changeProps} />
-            <select value={this.state.color} name="color" onChange={this.changeProps}>
-                <option value="red">Czerwony</option>
-                <option value="blue">Niebieski</option>
-                <option value="green">Zielony</option>
-            </select>
-            <textarea value={this.state.message} name="message" onChange={this.changeProps} />
-            <label>
-                <input type="checkbox" checked={this.state.isChecked} name="isChecked" onChange={this.changeProps} />
-            </label>
+                <input type='text' name='name' ref={input => this.myInput = input} /><br/>
+                <select name="color" defaultValue="blue"  ref={select => this.mySelect = select}>
+                    <option value="red">Czerwony</option>
+                    <option value="blue">Niebieski</option>
+                    <option value="green">Zielony</option>
+                </select><br/>
+                <textarea name="message" ref={textarea => this.myTextarea = textarea}  /><br/>
+                <label>
+                    <input type="checkbox" name="isChecked" ref={input => this.myCheckbox = input} />
+                </label><br/>
+                <button onClick={this.submitForm}>Submit</button>
             </div>
         );
     }

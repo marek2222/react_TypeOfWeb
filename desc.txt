@@ -95,6 +95,10 @@ Ci będą potrzebne. Albo biblioteki, z których chcesz korzystać w testach.
 
 20 
     Formularze w React.js — kontrolowane komponenty
+
+21 
+    Formularze w React.js — niekontrolowane komponenty
+
     
 
 
