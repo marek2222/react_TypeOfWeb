@@ -1,16 +1,20 @@
-import React from "react";
-import { render } from "react-dom";
-import JokeGenerator from "./jokeGenerator";
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
+import './index.css'
+import { createStore } from 'redux'
+import Licznik  from './Licznik'
+import licznik  from './Reducer'
 
-const styles = {
-  fontFamily: "sans-serif",
-  textAlign: "center"
-};
+const store = createStore(licznik)
 
-const App = () => (
-  <div style={styles}>
-    <JokeGenerator />
-  </div>
-);
+const render = () => ReactDOM.render( 
+    <Licznik 
+        wartosc = { store.getState() }
+        przyZwiekszeniu = { () => store.dispatch({ type: 'ZWIEKSZ' }) } 
+        przyZmniejszeniu = { () => store.dispatch({ type: 'ZMNIEJSZ' }) } 
+    /> , 
+    document.getElementById('root')
+)
 
-render(<App />, document.getElementById("root"));
+render()
+store.subscribe(render)
