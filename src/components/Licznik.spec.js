@@ -20,47 +20,47 @@ function setup(wartosc = 0) {
 }
 
 describe('Licznik komponent', () => {
-    it('should display count', () => {
+    it('powinien wyświetlić licznik', () => {
         const { p } = setup()
-        expect(p.text()).toMatch(/^Clicked: 0 times/)
+        expect(p.text()).toMatch(/^Kliknięto: 0 razy/)
     })
 
-    it('first button should call przyZwiekszaniu', () => {
+    it('pierwszy przycisk powinien wywoływać akcję przyZwiekszaniu', () => {
         const { buttons, akcje } = setup()
         buttons.at(0).simulate('click')
         expect(akcje.przyZwiekszaniu).toBeCalled()
     })
 
-    it('second button should call przyZmniejszaniu', () => {
+    it('drugi przycisk powinien wywoływać akcję przyZmniejszaniu', () => {
         const { buttons, akcje } = setup()
         buttons.at(1).simulate('click')
         expect(akcje.przyZmniejszaniu).toBeCalled()
     })
 
-    //   it('third button should not call przyZwiekszaniu if the counter is even', () => {
-    //     const { buttons, akcje } = setup(42)
-    //     buttons.at(2).simulate('click')
-    //     expect(akcje.przyZwiekszaniu).not.toBeCalled()
-    //   })
+      it('trzeci przycisk nie powinien wywoływać akcję przyZwiekszaniu jeśli licznik jest parzysty', () => {
+        const { buttons, akcje } = setup(42)
+        buttons.at(2).simulate('click')
+        expect(akcje.przyZwiekszaniu).not.toBeCalled()
+      })
 
-    //   it('third button should call przyZwiekszaniu if the counter is odd', () => {
-    //     const { buttons, akcje } = setup(43)
-    //     buttons.at(2).simulate('click')
-    //     expect(akcje.przyZwiekszaniu).toBeCalled()
-    //   })
+      it('trzeci przycisk powinien wywoływać akcję przyZwiekszaniu jeśli licznik jest nieparzysty', () => {
+        const { buttons, akcje } = setup(43)
+        buttons.at(2).simulate('click')
+        expect(akcje.przyZwiekszaniu).toBeCalled()
+      })
 
-    //   it('third button should call przyZwiekszaniu if the counter is odd and negative', () => {
-    //     const { buttons, akcje } = setup(-43)
-    //     buttons.at(2).simulate('click')
-    //     expect(akcje.przyZwiekszaniu).toBeCalled()
-    //   })
+      it('trzeci przycisk powinien wywoływać akcję przyZwiekszaniu jeśli licznik jest parzysty i ujemny', () => {
+        const { buttons, akcje } = setup(-43)
+        buttons.at(2).simulate('click')
+        expect(akcje.przyZwiekszaniu).toBeCalled()
+      })
 
-    //   it('fourth button should call przyZwiekszaniu in a second', (done) => {
-    //     const { buttons, akcje } = setup()
-    //     buttons.at(3).simulate('click')
-    //     setTimeout(() => {
-    //       expect(akcje.przyZwiekszaniu).toBeCalled()
-    //       done()
-    //     }, 1000)
-    //   })
+      it('czwarty przycisk powinien wywoływać przyZwiekszaniu po sekundzie', (done) => {
+        const { buttons, akcje } = setup()
+        buttons.at(3).simulate('click')
+        setTimeout(() => {
+            expect(akcje.przyZwiekszaniu).toBeCalled()
+            done()
+        }, 1000)
+    })
 })

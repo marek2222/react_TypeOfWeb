@@ -2,31 +2,26 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class Licznik extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.incrementAsync = this.incrementAsync.bind(this);
-    //     this.incrementIfOdd = this.incrementIfOdd.bind(this);
-    // }
 
-    // incrementIfOdd() {
-    //     if (this.props.wartosc % 2 !== 0) {
-    //     this.props.przyZwiekszaniu()
-    //     }
-    // }
+    incrementIfOdd = () => {
+        if (this.props.wartosc % 2 !== 0) {
+        this.props.przyZwiekszaniu()
+        }
+    }
 
-    // incrementAsync() {
-    //     setTimeout(this.props.przyZwiekszaniu, 1000)
-    // }
+    incrementAsync = () => {
+        setTimeout(this.props.przyZwiekszaniu, 1000)
+    }
 
     render() {
         const { wartosc, przyZwiekszaniu, przyZmniejszaniu } = this.props
         return (
         <p>
-            Clicked: {wartosc} times {' '}
+            Kliknięto: {wartosc} razy {' '}
             <button onClick={przyZwiekszaniu}>+</button>{' '}
             <button onClick={przyZmniejszaniu}>-</button> {' '}
-            {/*<button onClick={this.incrementIfOdd}>Increment if odd</button> {' '}
-            <button onClick={this.incrementAsync}>Increment async</button> */}
+            <button onClick={this.incrementIfOdd}>Zwiększa jeśli parzyste</button> {' '}
+            <button onClick={this.incrementAsync}>Zwiększa asynchronicznie</button>
         </p>
         )
     }
