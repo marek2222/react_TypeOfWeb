@@ -1,5 +1,5 @@
-export default (state = 0, action) => {
-    switch (action.type) {
+export default (state = 0, akcja) => {
+    switch (akcja.type) {
       case 'ZWIEKSZ':
         return state + 1
       case 'ZMNIEJSZ':
@@ -8,6 +8,3 @@ export default (state = 0, action) => {
         return state
     }
 }
-
-
-
