@@ -1,8 +1,16 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import './index.css';
-import { MyControlledForm  } from './MyUnControlledForm';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import { render } from "react-dom";
+import JokeGenerator from "./jokeGenerator";
 
-ReactDOM.render( <MyControlledForm /> , document.getElementById('root'));
-serviceWorker.unregister();
+const styles = {
+  fontFamily: "sans-serif",
+  textAlign: "center"
+};
+
+const App = () => (
+  <div style={styles}>
+    <JokeGenerator />
+  </div>
+);
+
+render(<App />, document.getElementById("root"));

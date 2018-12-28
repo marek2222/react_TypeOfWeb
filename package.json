@@ -1,42 +1,30 @@
 {
-    "name": "react_typeofweb",
-    "version": "0.1.0",
-    "private": false,
-    "dependencies": {
-        "react": "^16.6.3",
-        "react-dom": "^16.6.3",
-        "react-scripts": "2.1.1"
-    },
-    "devDependencies": {
-        "enzyme": "^3.7.0",
-        "enzyme-adapter-react-16": "^1.7.0",
-        "gh-pages": "^2.0.1",
-        "jest-enzyme": "^7.0.1",
-        "react-test-renderer": "^16.6.3"
-    },
-    "scripts": {
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build",
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject"
-    },
-    "homepage": "https://marek2222.github.io/react_typeofweb/",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/marek2222/react_typeofweb.git"
-    },
-    "bugs": {
-        "url": "https://github.com/marek2222/react_typeofweb/issues"
-    },
-    "eslintConfig": {
-        "extends": "react-app"
-    },
-    "browserslist": [
-        ">0.2%",
-        "not dead",
-        "not ie <= 11",
-        "not op_mini all"
-    ]
+  "name": "react_typeofweb",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-scripts": "2.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "axios-mock-adapter": "^1.15.0",
+    "react-testing-library": "^5.4.0"
+  }
 }

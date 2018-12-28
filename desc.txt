@@ -99,6 +99,26 @@ Ci będą potrzebne. Albo biblioteki, z których chcesz korzystać w testach.
 21 
     Formularze w React.js — niekontrolowane komponenty
 
-    
+23
+    TDD w React.js z pomocą react-testing-library
+
+    Projekt stworzymy z boilerplate create-react-app, 
+    Axios użyjemy do pobierania danych z zewnętrznego API, 
+    do uruchamiania testów Jest‚a, do mockowania zewnętrznego API MockAxios, 
+    a do renderowania komponentów, triggerowania akcji i obsługi asynchronicznych metod
+    react-testing-library — świetnej i ultra lekkiej biblioteki stworzonej przez
+    cytowanego już wcześniej Kent C. Dodds.
+
+    Generujemy projekt z create-react-app wg. instrukcji, 
+    a następnie instalujemy dodatkowe zależności (
+        do stworzenia projektu możemy użyć także CodeSandbox):
+
+    Utworzenie projektu i jego katalogu: 
+            npx create-react-app react_typeofweb
+
+    i zależności:
+            npm install axios
+            npm install --save-dev axios-mock-adapter react-testing-library 
+
 
 
