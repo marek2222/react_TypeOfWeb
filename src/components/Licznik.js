@@ -5,7 +5,7 @@ class Licznik extends Component {
 
     incrementIfOdd = () => {
         if (this.props.wartosc % 2 !== 0) {
-        this.props.przyZwiekszaniu()
+            this.props.przyZwiekszaniu()
         }
     }
 
@@ -20,7 +20,7 @@ class Licznik extends Component {
             Kliknięto: {wartosc} razy {' '}
             <button onClick={przyZwiekszaniu}>+</button>{' '}
             <button onClick={przyZmniejszaniu}>-</button> {' '}
-            <button onClick={this.incrementIfOdd}>Zwiększa jeśli parzyste</button> {' '}
+            <button onClick={this.incrementIfOdd}>Zwiększa jeśli nieparzyste</button> {' '}
             <button onClick={this.incrementAsync}>Zwiększa asynchronicznie</button>
         </p>
         )
