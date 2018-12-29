@@ -120,8 +120,14 @@ Ci będą potrzebne. Albo biblioteki, z których chcesz korzystać w testach.
             npm install axios
             npm install --save-dev axios-mock-adapter react-testing-library 
 
-24. 
-    Flux i Redux
+24. Flux i Redux
     
+25. React + Redux — kurs: wprowadzenie i podstawy
+    Zacznij od zainstalowania paczek redux i react-redux:
+        npm install --save react-redux redux
 
+    Praca z Reduksem składa się z 3 kroków:
+    1.Stworzenie store
+    2.Zdefiniowanie akcji
+    3.Napisanie reducerów
 
