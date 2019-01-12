@@ -1,36 +1,41 @@
 import * as React from "react";
 import { ContactsList } from "./ContactsList";
 import { AppHeader } from "./AppHeader";
-// connect
-import { connect } from 'react-redux'
-import { contactsFetched } from './actions'
-
+import { ContactsFilterContainer } from "./ContactsFilter";
+import { connect } from "react-redux";
+import { contactsFetched } from "./actions";
+import { getFilteredContacts } from "./selectors/getFilteredContacts";
 
 export class App extends React.Component {
-    componentDidMount() {
-        fetch("https://randomuser.me/api/?format=json&results=10")
-            .then(res => res.json())
-            .then(json => this.props.contactsFetched(json.results));
-    }
+  state = {
+    search: ""
+  };
 
-    render() {
-        return (
-            <div>
-                <AppHeader />
-                <main className="ui main text container">
-                    {/* {contacts ? <ContactsList contacts={contacts} /> : 'Ładowanie…'} */}
-                    <ContactsList contacts={this.props.contacts} />
-                </main>
-            </div>
-        );
-    }
+  componentDidMount() {
+    fetch("https://randomuser.me/api/?format=json&results=10")
+      .then(res => res.json())
+      .then(json => this.props.contactsFetched(json.results));
+  }
+
+  render() {
+    return (
+      <div>
+        <AppHeader />
+        <main className="ui main text container">
+          <ContactsFilterContainer />
+          <ContactsList contacts={this.props.contacts} /> {/* (2) */}
+        </main>
+      </div>
+    );
+  }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        contacts: state.contacts
-    }
-}
-const mapDispatchToProps = { contactsFetched }
+const mapStateToProps = state => {
+  return {
+    contacts: getFilteredContacts(state.contacts, state.contactsSearch)
+  };
+};
 
-export const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App)
+const mapDispatchToProps = { contactsFetched };
+
+export const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);

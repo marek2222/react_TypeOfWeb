@@ -131,3 +131,4 @@ Ci będą potrzebne. Albo biblioteki, z których chcesz korzystać w testach.
     2.Zdefiniowanie akcji
     3.Napisanie reducerów
 
+26. React + Redux — filtrowanie listy, proste selektory
